@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA Intelligence - Intelligence Redefined</title>
+    <!-- Include Tailwind CSS from CDN for quick styling reference -->
+    <!-- For production, you would typically compile and purge Tailwind CSS locally -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for glass morphism and text gradients */
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.05); /* white/5 */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* white/10 */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5); /* shadow-2xl shadow-black/50 */
+        }
+        .hero-background {
+            background-image: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-6p110w7mP9Kz5G82vV6w8D8F/user-p7nI4hT2oR1v3C6oP5L0U1O1/img-g01w9vN9P1n6P1N1O0K1G8I0.png?se=2024-06-25T14%3A24%3A43Z&sp=r&sv=2021-08-06&sr=b&rh=c&rsce=true&rscd=attachment%3B%20filename%3D0f398453-61a7-4c74-9426-17b8f9a263d9.png&sig=h3J2J6rQ9H0uW0c1n3K2I6M9W8c1G0p3f4J1Y9k1P9l%3D'); /* Placeholder URL */
+            background-size: cover;
+            background-position: center;
+        }
+        .analysis-background {
+            background-image: url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-6p110w7mP9Kz5G82vV6w8D8F/user-p7nI4hT2oR1v3C6oP5L0U1O1/img-h0k3w2w7P2o6K0O4F1F2B5G4.png?se=2024-06-25T14%3A24%3A43Z&sp=r&sv=2021-08-06&sr=b&rh=c&rsce=true&rscd=attachment%3B%20filename%3D1b5e5a26-4d04-4c46-9d04-5e1f0e47c1a8.png&sig=q4J3K6p8K1o7J5c2G3h6J9p5Q7o8E4y2e6J7T0c8E1d%3D'); /* Placeholder URL */
+            background-size: cover;
+            background-position: center;
+        }
+        .ai-image-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+        }
+        .text-gradient-white {
+             background-image: linear-gradient(to right, white, #e0f2f7, #e0d0f7); /* Equivalent to from-white via-blue-200 to-purple-200 */
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-blue-purple {
+            background-image: linear-gradient(to right, #60a5fa, #c084fc); /* blue-400 to purple-400 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Simple animation for the scroll indicator - requires pure CSS, not Tailwind utility */
+        .animate-bounce-custom {
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(-25%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+            50% {
+                transform: translateY(0);
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-black/20 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <img 
+                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_688e61efc26bb04ded705d65/a94ee26e5_icon_sa.png" 
+                        alt="SA Intelligence" 
+                        class="w-8 h-8"
+                    />
+                    <span class="text-xl font-light tracking-wide text-white/90">SA Intelligence</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href__="#products" class="text-white/70 hover:text-white transition-colors">Products</a>
+                    <a href__="#capabilities" class="text-white/70 hover:text-white transition-colors">Capabilities</a>
+                    <a href__="#contact" class="text-white/70 hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center">
+        <!-- Background image -->
+        <div class="absolute inset-0 opacity-30 hero-background"></div>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <div class="glass-effect rounded-3xl p-12">
+                <h1 class="text-5xl md:text-7xl font-thin mb-8 text-gradient-white">
+                    Intelligence
+                    <br />
+                    <span class="text-4xl md:text-6xl text-white/60">Redefined</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                    Advanced algorithmic solutions for pattern recognition, 
+                    behavioral analysis, and intelligence processing.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button 
+                        class="px-8 py-4 rounded-xl text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white border-none shadow-lg shadow-blue-500/25 backdrop-blur-sm"
+                    >
+                        <span class="inline-block align-middle mr-2">🔒</span>
+                        Classified Access
+                    </button>
+                    <button 
+                        class="px-8 py-4 rounded-xl text-lg bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm"
+                    >
+                        <span class="inline-block align-middle mr-2">→</span>
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce-custom">
+            <span class="text-white/50 text-xl">↓</span>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-32 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-gray-900"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/10 text-white/80 border border-white/20 mb-6">
+                    Classified Technologies
+                </span>
+                <h2 class="text-4xl md:text-6xl font-thin mb-6 text-gradient-white">
+                    Our Solutions
+                </h2>
+                <p class="text-xl text-white/50 max-w-2xl mx-auto">
+                    Cutting-edge algorithms designed for those who require the highest level of intelligence processing.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- SITWARE -->
+                <div class="glass-effect p-8 rounded-xl hover:bg-white/10 transition-all duration-500">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center border border-red-500/20">
+                            <span class="text-red-400 text-2xl">🛡️</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-light text-white mb-4">SITWARE</h3>
+                            <p class="text-white/60 text-lg leading-relaxed mb-6">
+                                Advanced threat detection and pattern recognition system. 
+                                Processes multiple intelligence streams for early warning and risk assessment.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-red-500/30 text-red-400">
+                                    📸 Visual Intelligence
+                                </span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-orange-500/30 text-orange-400">
+                                    💾 OSINT Processing
+                                </span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-yellow-500/30 text-yellow-400">
+                                    👁️ Threat Detection
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Awareness -->
+                <div class="glass-effect p-8 rounded-xl hover:bg-white/10 transition-all duration-500">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center border border-blue-500/20">
+                            <span class="text-blue-400 text-2xl">💬</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-light text-white mb-4">Social Intelligence</h3>
+                            <p class="text-white/60 text-lg leading-relaxed mb-6">
+                                Real-time behavioral analysis and response generation. 
+                                Interprets social cues, expressions, and conversational patterns.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-blue-500/30 text-blue-400">
+                                    🧠 Behavioral Analysis
+                                </span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-purple-500/30 text-purple-400">
+                                    ⚡ Real-time Processing
+                                </span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-cyan-500/30 text-cyan-400">
+                                    🗣️ Response Generation
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="py-32 relative">
+        <!-- Background image -->
+        <div class="absolute inset-0 opacity-20 analysis-background"></div>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white border border-blue-500/30 mb-6">
+                        Analysis Capabilities
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-thin mb-8 text-white leading-tight">
+                        Intelligence That
+                        <br />
+                        <span class="text-gradient-blue-purple">
+                            Stays Hidden
+                        </span>
+                    </h2>
+                    <p class="text-xl text-white/60 leading-relaxed mb-8">
+                        Our algorithms operate in the shadows, processing vast amounts of data 
+                        to provide insights that others miss. Every pattern recognized, 
+                        every behavior analyzed, every threat identified.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                            <span class="text-white/80">Multi-source intelligence fusion</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                            <span class="text-white/80">Real-time behavioral profiling</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                            <span class="text-white/80">Predictive threat modeling</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                            <span class="text-white/80">Encrypted processing pipeline</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="glass-effect rounded-3xl p-8">
+                        <img 
+                            src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-6p110w7mP9Kz5G82vV6w8D8F/user-p7nI4hT2oR1v3C6oP5L0U1O1/img-q9q3w0w1w8P2r4q7J1J4D2f6.png?se=2024-06-25T14%3A24%3A43Z&sp=r&sv=2021-08-06&sr=b&rh=c&rsce=true&rscd=attachment%3B%20filename%3D7e2e3f69-7c8a-4c28-9d41-3b7c8e9c2d1b.png&sig=h3C7O8P9Q1G0w2d3R5f7E1D8Z0y4M7K0C5B2j8L6N9p%3D" 
+                            alt="AI Processing" 
+                            class="w-full rounded-2xl opacity-80"
+                        />
+                        <div class="absolute inset-0 ai-image-overlay rounded-3xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-black to-gray-900"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <div class="glass-effect rounded-3xl p-12">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/10 text-white/80 border border-white/20 mb-8">
+                    Classified Communications
+                </span>
+                
+                <h2 class="text-4xl md:text-5xl font-thin mb-8 text-white">
+                    Access Request
+                </h2>
+                
+                <p class="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
+                    For authorized personnel only. All communications are monitored and encrypted.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                            <span class="text-blue-400 text-2xl">📧</span>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-white/40 text-sm">Secure Contact</p>
+                            <p class="text-white font-mono">classified@saintelligence.eu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                            <span class="text-purple-400 text-2xl">🌐</span>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-white/40 text-sm">Domain</p>
+                            <p class="text-white font-mono">saintelligence.eu</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-2xl">
+                    <p class="text-yellow-400/80 text-sm">
+                        <span class="inline-block align-middle mr-2">🔒</span>
+                        Security clearance required for detailed discussions
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <img 
+                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_688e61efc26bb04ded705d65/a94ee26e5_icon_sa.png" 
+                        alt="SA Intelligence" 
+                        class="w-6 h-6 opacity-60"
+                    />
+                    <span class="text-white/40 text-sm">SA Intelligence</span>
+                </div>
+                <p class="text-white/30 text-xs">
+                    © 2024 SA Intelligence. All operations classified.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
